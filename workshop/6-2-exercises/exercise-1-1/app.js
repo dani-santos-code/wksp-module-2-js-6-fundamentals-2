@@ -15,8 +15,6 @@
 // - write only one event listener
 // - use a switch statement
 
-const ul = document.querySelector("#btn-list");
-
 const handleButtonCall = buttonId => {
   switch (buttonId) {
     case 1:
