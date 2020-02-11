@@ -1,8 +1,9 @@
-let verifyEquals = require('../../assets/verify-equals');
+let verifyEquals = require("../../assets/verify-equals");
 
 // Problem 10
 // ----------
-// Make this function return the input string, capitalized. You must use a for loop. For example:
+// Make this function return the input string, capitalized.
+// You must use a for loop.For example:
 // f("hello world"); // Hello World
 // f("ALL YOUR BASE ARE BELONG"); // All Your Base Are Belong
 
@@ -11,17 +12,27 @@ let verifyEquals = require('../../assets/verify-equals');
 //    - Use the toUpperCase string method
 
 function f(str) {
-
+  if (typeof str !== "string") {
+    return undefined;
+  }
+  const lettersToUpperCase = str.split().map(letter => letter.toUpperCase());
+  return lettersToUpperCase.join("");
 }
 
 // Test cases
-let inputs = [];
-let outputs = [];
+let inputs = ["hello", "All Your Base Are Belong", "I'm small", "yay", 1];
+let outputs = [
+  "HELLO",
+  "ALL YOUR BASE ARE BELONG",
+  "I'M SMALL",
+  "YAY",
+  undefined
+];
 
 // STOP -----------------------------------------------------------------
 // No code changes below. This is the actual test that will run your test cases and validate your function.
 function runTest(i) {
-  if (i >= inputs.length) throw new Error('You do not have enough test cases');
+  if (i >= inputs.length) throw new Error("You do not have enough test cases");
   let expected = outputs[i];
   let actual = f(inputs[i]);
   verifyEquals(expected, actual);
@@ -33,4 +44,4 @@ runTest(2);
 runTest(3);
 runTest(4);
 
-console.log('All tests passed for ' + __filename);
+console.log("All tests passed for " + __filename);
