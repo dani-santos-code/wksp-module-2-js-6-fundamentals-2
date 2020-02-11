@@ -8,8 +8,14 @@ let verifyEquals = require("../../assets/verify-equals");
 // - If one of the numbers is not passed, or if anything other than numbers are passed, return undefined.
 
 function f(inputs) {
-  for (let i = 0; i <= inputs.length; i++) {
-    console.log(inputs[i] * inputs[i + 1];
+  if (inputs.length) {
+    return inputs.reduce((currentValue, accumulator) => {
+      if (typeof currentValue === "number") {
+        return currentValue * accumulator;
+      }
+    });
+  } else {
+    return undefined;
   }
 }
 
@@ -17,11 +23,8 @@ function f(inputs) {
 // We need 5 test cases. The first input is provided.
 // Don't forget to test all of the question parameters
 
-let inputs = [
-  [2, 7],
-  [3, 5]
-];
-let outputs = [14, 15];
+let inputs = [[2, 7], [3, 5], [9, 3], ["hello", "there"], []];
+let outputs = [14, 15, 27, undefined];
 
 // Step 3
 // Run this file in the debugger.
@@ -38,7 +41,7 @@ function runTest(i) {
 
 runTest(0);
 runTest(1);
-// runTest(2);
-// runTest(3);
-// runTest(4);
+runTest(2);
+runTest(3);
+runTest(4);
 console.log("All tests passed for " + __filename);
