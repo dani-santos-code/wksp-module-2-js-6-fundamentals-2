@@ -8,11 +8,14 @@ let verifyEquals = require("../../assets/verify-equals");
 // RADAR -> Yes
 // JAVASCRIPT -> No
 
-function f(str) {}
+function f(str) {
+  const reversed = str.split("").reverse();
+  return reversed.join("") === str;
+}
 
 // Test cases
-let inputs = [];
-let outputs = [];
+let inputs = ["radar", "javascript", "tacocat", "cat", "noon", "true"];
+let outputs = [true, false, true, false, true, false];
 
 // STOP -----------------------------------------------------------------
 // No code changes below. This is the actual test that will run your test cases and validate your function.
@@ -27,6 +30,6 @@ runTest(0);
 runTest(1);
 runTest(2);
 runTest(3);
-runTest(4);
+// runTest(4);
 
 console.log("All tests passed for " + __filename);
