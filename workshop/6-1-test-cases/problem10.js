@@ -11,11 +11,23 @@ let verifyEquals = require("../../assets/verify-equals");
 //    - Use a for loop to capitalize the words one by one
 //    - Use the toUpperCase string method
 
-function f(str) {}
+function f(str) {
+  if (typeof str !== "string") {
+    return undefined;
+  }
+  const lettersToUpperCase = str.split().map(letter => letter.toUpperCase());
+  return lettersToUpperCase.join("");
+}
 
 // Test cases
-let inputs = [];
-let outputs = [];
+let inputs = ["hello", "All Your Base Are Belong", "I'm small", "yay", 1];
+let outputs = [
+  "HELLO",
+  "ALL YOUR BASE ARE BELONG",
+  "I'M SMALL",
+  "YAY",
+  undefined
+];
 
 // STOP -----------------------------------------------------------------
 // No code changes below. This is the actual test that will run your test cases and validate your function.
